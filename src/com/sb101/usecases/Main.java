@@ -88,7 +88,7 @@ public class Main {
 						if(nhod==1) {	
 							ViewAssignedProblemsToEngineer.main();
 						}else if(nhod==2) {
-							
+							EngineerUpdateProblemStatus.main();
 						}else if(nhod==3) {
 							EngineerUpdatePassword.main();
 						}else if(nhod==4) {
