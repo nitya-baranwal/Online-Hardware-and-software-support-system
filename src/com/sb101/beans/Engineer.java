@@ -2,29 +2,35 @@ package com.sb101.beans;
 
 public class Engineer {
 	
-	private int engineerid;
-	private String engineername;
-	private String engineerpass;
+	private int engid;
+	private String engname;
+	private String enguser;
+	private String engpass;
 	private String category;
-	private int complainid;
 	
-	public int getEngineerid() {
-		return engineerid;
+	public int getEngid() {
+		return engid;
 	}
-	public void setEngineerid(int engineerid) {
-		this.engineerid = engineerid;
+	public void setEngid(int engid) {
+		this.engid = engid;
 	}
-	public String getEngineername() {
-		return engineername;
+	public String getEngname() {
+		return engname;
 	}
-	public void setEngineername(String engineername) {
-		this.engineername = engineername;
+	public void setEngname(String engname) {
+		this.engname = engname;
 	}
-	public String getEngineerpass() {
-		return engineerpass;
+	public String getEnguser() {
+		return enguser;
 	}
-	public void setEngineerpass(String engineerpass) {
-		this.engineerpass = engineerpass;
+	public void setEnguser(String enguser) {
+		this.enguser = enguser;
+	}
+	public String getEngpass() {
+		return engpass;
+	}
+	public void setEngpass(String engpass) {
+		this.engpass = engpass;
 	}
 	public String getCategory() {
 		return category;
@@ -32,27 +38,48 @@ public class Engineer {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public int getComplainid() {
-		return complainid;
-	}
-	public void setComplainid(int complainid) {
-		this.complainid = complainid;
-	}
+	
+	
 	public Engineer() {
 
 	}
-	public Engineer(int engineerid, String engineername, String engineerpass, String category, int complainid) {
-
-		this.engineerid = engineerid;
-		this.engineername = engineername;
-		this.engineerpass = engineerpass;
+	
+	
+	public Engineer(String enguser, String engpass) {
+		super();
+		this.enguser = enguser;
+		this.engpass = engpass;
+	}
+	public Engineer(String engname, String enguser, String engpass, String category) {
+		super();
+		this.engname = engname;
+		this.enguser = enguser;
+		this.engpass = engpass;
 		this.category = category;
-		this.complainid = complainid;
+	}
+	public Engineer(String enguser, String engpass, String category) {
+
+		this.enguser = enguser;
+		this.engpass = engpass;
+		this.category = category;
+	}
+	public Engineer(int engid, String engname, String enguser, String engpass, String category) {
+
+		this.engid = engid;
+		this.engname = engname;
+		this.enguser = enguser;
+		this.engpass = engpass;
+		this.category = category;
 	}
 	@Override
 	public String toString() {
-		return "Engineer [engineerid=" + engineerid + ", engineername=" + engineername + ", engineerpass="
-				+ engineerpass + ", category=" + category + ", complainid=" + complainid + "]";
+		return "Engineer [engid=" + engid + ", engname=" + engname + ", enguser=" + enguser + ", engpass=" + engpass
+				+ ", category=" + category + "]";
 	}
+	
+	
+	
+	
+	
 	
 }

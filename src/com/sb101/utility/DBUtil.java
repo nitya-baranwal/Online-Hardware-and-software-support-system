@@ -15,7 +15,7 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 
-		String url = "jdbc:mysql://localhost:3306/project";
+		String url = "jdbc:mysql://localhost:3306/sb101";
 		try {
 			conn = DriverManager.getConnection(url, "root", "nitya");
 		} catch (SQLException e) {
