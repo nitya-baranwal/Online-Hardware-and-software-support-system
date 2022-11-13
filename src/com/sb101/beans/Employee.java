@@ -6,7 +6,6 @@ public class Employee {
 	private String empname;
 	private String empusername;
 	private String emppassword;
-	private String empcategory;
 	
 	
 	public int getEmpid() {
@@ -33,15 +32,20 @@ public class Employee {
 	public void setEmppassword(String emppassword) {
 		this.emppassword = emppassword;
 	}
-	public String getEmpcategory() {
-		return empcategory;
-	}
-	public void setEmpcategory(String empcategory) {
-		this.empcategory = empcategory;
-	}
-	
+
 	public Employee() {
 
+	}
+	public Employee(String empusername, String emppassword) {
+
+		this.empusername = empusername;
+		this.emppassword = emppassword;
+	}
+	public Employee(String empname, String empusername, String emppassword) {
+
+		this.empname = empname;
+		this.empusername = empusername;
+		this.emppassword = emppassword;
 	}
 	public Employee(int empid, String empname, String empusername, String emppassword, String empcategory) {
 
@@ -49,13 +53,12 @@ public class Employee {
 		this.empname = empname;
 		this.empusername = empusername;
 		this.emppassword = emppassword;
-		this.empcategory = empcategory;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Employee [empid=" + empid + ", empname=" + empname + ", empusername=" + empusername + ", emppassword="
-				+ emppassword + ", empcategory=" + empcategory + "]";
+				+ emppassword + "]";
 	}
 	
 	
