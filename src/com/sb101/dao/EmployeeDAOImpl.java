@@ -157,9 +157,9 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				String status = rs.getString("status");
+				String status = rs.getString("engid");
 				
-				message = "Status of problem id " + problemid + ": "+status;
+				message = "Problem id " + problemid + " is assigned to engineer with id: "+status;
 			}else {
 				message = "Wrong problem id..!";
 			}
@@ -191,12 +191,13 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 				ResultSet rs = ps.executeQuery();
 				while(rs.next()) {
 					int pid = rs.getInt("problemid");
+					int engid = rs.getInt("engid");
 					int empid = rs.getInt("empid");
-					String cat = rs.getString("category");
 					String name = rs.getString("pname");
+					String cat = rs.getString("category");
+					String status = rs.getString("status");
 					
-					
-					Problem_Engineer problem = new Problem_Engineer(pid,empid,name,cat);
+					Problem_Engineer problem = new Problem_Engineer(pid,engid,empid,name,cat,status);
 					
 					list.add(problem);
 				}

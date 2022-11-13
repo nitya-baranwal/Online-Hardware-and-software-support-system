@@ -36,7 +36,7 @@ public class EngineerDAOImpl implements EngineerDAO{
 				e.setEngname(rs.getString("name"));
 				e.setCategory(rs.getString("category"));
 				
-				message = "Login successful..! \nWelcome " + e.getEngname();
+				message = "Login successful..! \nWelcome " + e.getEngname() +" id "+e.getEngid();
 			}
 			
 		} catch (SQLException e1) {
@@ -53,29 +53,25 @@ public class EngineerDAOImpl implements EngineerDAO{
 		List<Problem_Engineer> list = new ArrayList<>();
 		
 		try(Connection conn = DBUtil.provideConnection()){
-			System.out.println("------56");
+			
 			PreparedStatement ps = conn.prepareStatement("select * from problem_engineer where engid=?");
-			System.out.println("-------58");
+			
 			ps.setInt(1, engid);
-			System.out.println("--------60");
 			ResultSet rs = ps.executeQuery();
-			System.out.println("-------62");
 			while(rs.next()) {
-				System.out.println("-------64");
 				int pid = rs.getInt("problemid");
 				int empid = rs.getInt("empid");
 				String category = rs.getString("category");
 				String name = rs.getString("pname");
 				String status = rs.getString("status");
-				System.out.println("--------70");
+				
 				Problem_Engineer problem = new Problem_Engineer(pid, engid, empid, name, category, status);
-				System.out.println("------72");
+				
 				list.add(problem);
 			}
 			
 			
 		}catch (SQLException e) {
-			System.out.println("----------78");
 			throw new EngineerException("No such engineer exist!");
 		}
 		if(list.size()==0) {
@@ -91,13 +87,31 @@ public class EngineerDAOImpl implements EngineerDAO{
 		
 		try(Connection conn = DBUtil.provideConnection()){
 			
-//			PreparedStatement ps = conn.prepareStatement("update problem set ");
-//			
-//			ps.set
+			PreparedStatement ps = conn.prepareStatement("select * from problem_engineer where problemid=? AND engid=?");
+			
+			ps.setInt(1, pid);
+			ps.setInt(2, engid);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				
+				PreparedStatement ps1 = conn.prepareStatement("update problem_engineer set status='Resolved' where problemid=?");
+				
+				ps1.setInt(1, pid);
+				
+				int x = ps1.executeUpdate();
+				
+				if(x>0) {
+					message = "Problem id: " + pid + " Status: Resolved";
+				}
+				
+			}
+			
+			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			message = e.getMessage();
 		}
 		return message;
 	}
