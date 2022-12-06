@@ -13,16 +13,16 @@ public class RegisterNewEngineer {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter engineer email");
+		System.out.print("Enter engineer email: ");
 		String email = sc.next();
 		
-		System.out.println("Enter engineer password");
+		System.out.print("Enter engineer password: ");
 		String password = sc.next();
 		
-		System.out.println("Enter engineer name");
+		System.out.print("Enter engineer name: ");
 		String name = sc.next();
 
-		System.out.println("Enter engineer category");
+		System.out.print("Enter engineer category: ");
 		String category = sc.next();
 		
 		Engineer eng = new Engineer(name,email,password,category);
@@ -33,7 +33,7 @@ public class RegisterNewEngineer {
 			String registerEngineerStatus = dao.registerNewEngineer(eng);
 			System.out.println(registerEngineerStatus);
 		} catch (EngineerException e) {
-			System.out.println(e.getMessage()+"  --37");
+			System.out.println(e.getMessage());
 		}
 		
 	}

@@ -14,10 +14,10 @@ public class AssignProblemToEngineer {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter problem id");
+		System.out.print("Enter problem id: ");
 		int pid = scanner.nextInt();
 		
-		System.out.println("Enter engineer id");
+		System.out.print("Enter engineer id: ");
 		int eid = scanner.nextInt();
 		
 		Problem problem = new Problem(pid);

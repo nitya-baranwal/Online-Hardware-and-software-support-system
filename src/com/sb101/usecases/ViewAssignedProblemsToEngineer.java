@@ -16,7 +16,7 @@ public class ViewAssignedProblemsToEngineer {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter engineer id");
+		System.out.println("Enter engineer id: ");
 		int engid = scanner.nextInt();
 		
 		EngineerDAO dao = new EngineerDAOImpl();

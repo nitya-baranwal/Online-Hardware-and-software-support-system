@@ -17,7 +17,7 @@ public class CheckComplainHistory {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter employee id");
+		System.out.print("Enter employee id: ");
 		int empid = sc.nextInt();
 		
 		Employee emp = new Employee();

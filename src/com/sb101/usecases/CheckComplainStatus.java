@@ -14,7 +14,7 @@ public class CheckComplainStatus {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Enter problem id");
+		System.out.print("Enter problem id: ");
 		int pid = scanner.nextInt();
 		
 		EmployeeDAO dao = new EmployeeDAOImpl();
@@ -23,7 +23,7 @@ public class CheckComplainStatus {
 			String problemStatus = dao.checkComplainStatus(pid);
 			System.out.println(problemStatus);
 		} catch (ComplainException e) {
-			System.out.println(e.getMessage() + " --28");
+			System.out.println(e.getMessage());
 		}
 		
 		

@@ -36,7 +36,7 @@ public class EngineerDAOImpl implements EngineerDAO{
 				e.setEngname(rs.getString("name"));
 				e.setCategory(rs.getString("category"));
 				
-				message = "Login successful..! \nWelcome " + e.getEngname() +" id "+e.getEngid();
+				message = "Login successful..!\nWelcome Engineer " + e.getEngname() +"!\nAssigned id: "+e.getEngid();
 			}
 			
 		} catch (SQLException e1) {

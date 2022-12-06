@@ -13,13 +13,13 @@ public class RegisterEmployee {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter employee name");
+		System.out.print("Enter employee name: ");
 		String name = sc.next();
 		
-		System.out.println("Enter employee email");
+		System.out.print("Enter employee email: ");
 		String email = sc.next();
 		
-		System.out.println("Enter employee password");
+		System.out.print("Enter employee password: ");
 		String password = sc.next();
 		
 		Employee emp = new Employee(name,email,password);
@@ -30,7 +30,7 @@ public class RegisterEmployee {
 			String registrationStatus = dao.registerEmployee(emp);
 			System.out.println(registrationStatus);
 		} catch (EmployeeException e) {
-			System.out.println(e.getMessage() +"--33");
+			System.out.println(e.getMessage());
 		}
 		
 	}

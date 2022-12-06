@@ -65,7 +65,7 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 	@Override
 	public String loginEmployee(Employee emp) throws EmployeeException {
 		
-		String message = "Wrong credentials..!";
+		String message = "\nWrong credentials..!\n";
 		
 		try(Connection conn = DBUtil.provideConnection()){
 			
@@ -81,8 +81,8 @@ public class EmployeeDAOImpl implements EmployeeDAO{
 				emp.setEmpid(rs.getInt("empid"));
 				emp.setEmpname(rs.getString("name"));
 				
-				message = "Login successful..! \nWelcome " + emp.getEmpname()
-				+" id "+emp.getEmpid();
+				message = "Login successful..!\nWelcome Employee" + emp.getEmpname()
+				+"!\nAssigned id: "+emp.getEmpid();
 			}
 			
 		} catch (SQLException e1) {
