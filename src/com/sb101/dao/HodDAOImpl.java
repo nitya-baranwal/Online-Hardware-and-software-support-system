@@ -23,7 +23,7 @@ public class HodDAOImpl implements HodDAO{
 	@Override
 	public String loginHOD(String username, String pass) throws HODException {
 		
-		String message = "Wrong credentials..";
+		String message = "\nWrong credentials!\n";
 		
 		try(Connection conn = DBUtil.provideConnection()){
 			

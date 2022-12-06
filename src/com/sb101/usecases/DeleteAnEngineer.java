@@ -11,7 +11,7 @@ public class DeleteAnEngineer {
 	public static void main() {
 		
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter engineer id");
+		System.out.println("Enter engineer id: ");
 		int engid = sc.nextInt();
 		
 		HodDAO dao = new HodDAOImpl();
@@ -20,7 +20,7 @@ public class DeleteAnEngineer {
 			String removeStatus = dao.removeEngineer(engid);
 			System.out.println(removeStatus);
 		} catch (EngineerException e) {
-			System.out.println("No such Engineer found..!");
+			System.out.println("\nNo such Engineer found..!\n");
 		}
 		
 		

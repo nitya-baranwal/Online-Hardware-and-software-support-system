@@ -13,13 +13,20 @@ public class RegisterNewProblem {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter employee id");
+		System.out.print("Enter employee id: ");
 		int empid = sc.nextInt();
 		
-		System.out.println("Enter problem category");
-		String category = sc.next();
+		System.out.print("Enter problem category:\n1.Software\n2.Hardware\n");
+		int category_type = sc.nextInt();
+		String category;
+		if(category_type==1) category="Software";
+		else if(category_type==2) category="Hardware";
+		else {
+			System.out.println("Invalid input, enter correct problem category");
+			return;
+		}
 		
-		System.out.println("Enter problem name");
+		System.out.print("Enter problem name: ");
 		String name = sc.next();
 		EmployeeDAO dao = new EmployeeDAOImpl();
 		
@@ -27,7 +34,7 @@ public class RegisterNewProblem {
 			String registeredProblemStatus = dao.registerComplain(empid,category,name);
 			System.out.println(registeredProblemStatus);
 		} catch (ComplainException e) {
-			System.out.println(e.getMessage()+" --------30");
+			System.out.println(e.getMessage());
 		}
 	}
 }

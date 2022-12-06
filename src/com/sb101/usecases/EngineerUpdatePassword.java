@@ -12,10 +12,10 @@ public class EngineerUpdatePassword {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter engineer username");
+		System.out.print("Enter engineer username: ");
 		String email= sc.next();
 		
-		System.out.println("Enter new password");
+		System.out.print("Enter new password: ");
 		String newPass = sc.next();
 		
 		
@@ -25,7 +25,7 @@ public class EngineerUpdatePassword {
 			String passwordUpdate = dao.changePassword(email,newPass);
 			System.out.println(passwordUpdate);
 		} catch (EngineerException e) {
-			System.out.println(e.getMessage()+"---28");
+			System.out.println(e.getMessage());
 		}
 		
 		

@@ -13,10 +13,10 @@ public static void main() {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Enter employee username");
+		System.out.print("Enter employee username: ");
 		String email= sc.next();
 		
-		System.out.println("Enter new password");
+		System.out.print("Enter new password: ");
 		String newPass = sc.next();
 		
 		EmployeeDAO dao = new EmployeeDAOImpl();
@@ -25,7 +25,7 @@ public static void main() {
 			String passwordUpdate = dao.changePassword(email,newPass);
 			System.out.println(passwordUpdate);
 		} catch (EmployeeException e) {
-			System.out.println(e.getMessage()+"---28");
+			System.out.println(e.getMessage());
 		}
 		
 		
