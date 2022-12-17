@@ -8,6 +8,7 @@ public class Problem_Engineer {
 	private String name;
 	private String category;
 	private String status;
+	
 	public int getProblemid() {
 		return problemid;
 	}
@@ -56,6 +57,7 @@ public class Problem_Engineer {
 		this.name = name;
 		this.category = category;
 	}
+	
 	public Problem_Engineer(int problemid, int engid, int empid, String name, String category, String status) {
 		super();
 		this.problemid = problemid;
@@ -65,6 +67,7 @@ public class Problem_Engineer {
 		this.category = category;
 		this.status = status;
 	}
+	
 	@Override
 	public String toString() {
 		return "Problem_Engineer [problemid=" + problemid + ", engid=" + engid + ", empid=" + empid + ", name=" + name
